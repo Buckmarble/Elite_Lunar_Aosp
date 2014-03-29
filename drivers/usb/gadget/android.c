@@ -517,7 +517,26 @@ static void rmnet_function_cleanup(struct android_usb_function *f)
 static int rmnet_function_bind_config(struct android_usb_function *f,
 					 struct usb_configuration *c)
 {
+<<<<<<< HEAD
 	int i;
+=======
+	int i, err = 0;
+
+	for (i = 0; i < rmnet_nports; i++) {
+		err = frmnet_bind_config(c, i);
+		if (err) {
+			pr_err("Could not bind rmnet%u config\n", i);
+			break;
+		}
+	}
+
+	return err;
+}
+
+static int rmnet_function_init(struct android_usb_function *f,
+		struct usb_composite_dev *cdev)
+{
+>>>>>>> 67019d3... LINARO: fix multiple uninitalized variables, not defined etc for use with Linaro 4.8.3 toolchains
 	int err = 0;
 	char *ctrl_name;
 	char *data_name;

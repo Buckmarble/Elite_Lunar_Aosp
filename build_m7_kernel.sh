@@ -27,7 +27,11 @@
   m=$k/out/$c/system/lib/modules
   z=$c-$today
 
+<<<<<<< HEAD
 TOOLCHAIN=/home/forrest/kernel/arm-eabi-4.7/bin/arm-eabi-
+=======
+TOOLCHAIN=/home/forrest/kernel/linaro-4.8.3/bin/arm-eabi-
+>>>>>>> 67019d3... LINARO: fix multiple uninitalized variables, not defined etc for use with Linaro 4.8.3 toolchains
 export ARCH=arm
 export SUBARCH=arm
 
