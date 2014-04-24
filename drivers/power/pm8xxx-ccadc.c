@@ -691,15 +691,7 @@ DEFINE_SIMPLE_ATTRIBUTE(calc_fops, get_calc, NULL, "%lld\n");
 #ifdef CONFIG_MACH_HTC
 void dump_all(void)
 {
-<<<<<<< HEAD
 	u64 val;
-=======
-	u64 val = 0;
-	unsigned int len =0;
-
-	memset(batt_log_buf, 0, sizeof(BATT_LOG_BUF_LEN));
-
->>>>>>> 67019d3... LINARO: fix multiple uninitalized variables, not defined etc for use with Linaro 4.8.3 toolchains
 	get_reg((void *)CCADC_ANA_PARAM, &val);
 	pr_debug("CCADC_ANA_PARAM = 0x%02llx\n", val);
 	get_reg((void *)CCADC_DIG_PARAM, &val);
